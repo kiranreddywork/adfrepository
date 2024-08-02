@@ -1,0 +1,132 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "ityadf"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage1sca1_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage3_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStoragegit_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"LSblobissourceA_connectionString": {
+			"value": ""
+		},
+		"LSblobsourceSAQQ_connectionString": {
+			"value": ""
+		},
+		"LSdestinationGen2O_accountKey": {
+			"value": ""
+		},
+		"LSforBlobSA1_connectionString": {
+			"value": ""
+		},
+		"LSfordestination_accountKey": {
+			"value": ""
+		},
+		"LSforsource_connectionString": {
+			"value": ""
+		},
+		"LSsinksqlA_password": {
+			"value": ""
+		},
+		"LSsourceBlobO_connectionString": {
+			"value": ""
+		},
+		"LSsourcetosql_connectionString": {
+			"value": ""
+		},
+		"LSsqldestinationQQ_password": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://sa2foradf.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://sa2foradf.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"value": "https://sa2foradf.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStoragegit_properties_typeProperties_url": {
+			"value": "https://sa2foradf.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "lapop-20vsltd9.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "kiran"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "KIRAN"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"value": "@{linkedService().BASEUrl}"
+		},
+		"LSHttpO_properties_typeProperties_url": {
+			"value": "@{linkedService().baseurl}"
+		},
+		"LSdestinationGen2O_properties_typeProperties_url": {
+			"value": "https://sa2foradf.dfs.core.windows.net/"
+		},
+		"LSforKeyVaultQ_properties_typeProperties_baseUrl": {
+			"value": "https://keyvaultnamez1.vault.azure.net/"
+		},
+		"LSfordestination_properties_typeProperties_url": {
+			"value": "https://sa2foradf.dfs.core.windows.net/"
+		},
+		"LSsinksqlA_properties_typeProperties_server": {
+			"value": "lapop-20vsltd9.database.windows.net"
+		},
+		"LSsinksqlA_properties_typeProperties_database": {
+			"value": "kiran"
+		},
+		"LSsinksqlA_properties_typeProperties_userName": {
+			"value": "KIRAN"
+		},
+		"LSsqldestinationQQ_properties_typeProperties_server": {
+			"value": "lapop-20vsltd9.database.windows.net"
+		},
+		"LSsqldestinationQQ_properties_typeProperties_database": {
+			"value": "kiran"
+		},
+		"LSsqldestinationQQ_properties_typeProperties_userName": {
+			"value": "KIRAN"
+		},
+		"LsforSQLandkeyvaultQ_properties_typeProperties_server": {
+			"value": "lapop-20vsltd9.database.windows.net"
+		},
+		"LsforSQLandkeyvaultQ_properties_typeProperties_database": {
+			"value": "kiran"
+		},
+		"LsforSQLandkeyvaultQ_properties_typeProperties_userName": {
+			"value": "KIRAN"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"value": "/subscriptions/234d78ea-1a5d-43ea-ab90-49351b91be5f/resourceGroups/MyRG/providers/Microsoft.Storage/storageAccounts/sa1foradf"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

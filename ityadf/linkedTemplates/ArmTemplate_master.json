@@ -1,0 +1,355 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "ityadf"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureBlobStorage1sca1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1sca1'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureDataLakeStorage2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
+		},
+		"AzureDataLakeStorage3_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage3'"
+		},
+		"AzureDataLakeStoragegit_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStoragegit'"
+		},
+		"AzureSqlDatabase1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
+		},
+		"LSblobissourceA_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LSblobissourceA'"
+		},
+		"LSblobsourceSAQQ_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LSblobsourceSAQQ'"
+		},
+		"LSdestinationGen2O_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LSdestinationGen2O'"
+		},
+		"LSforBlobSA1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LSforBlobSA1'"
+		},
+		"LSfordestination_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LSfordestination'"
+		},
+		"LSforsource_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LSforsource'"
+		},
+		"LSsinksqlA_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LSsinksqlA'"
+		},
+		"LSsourceBlobO_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LSsourceBlobO'"
+		},
+		"LSsourcetosql_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'LSsourcetosql'"
+		},
+		"LSsqldestinationQQ_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LSsqldestinationQQ'"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sa2foradf.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sa2foradf.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage3_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sa2foradf.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStoragegit_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sa2foradf.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "lapop-20vsltd9.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "kiran"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "KIRAN"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "@{linkedService().BASEUrl}"
+		},
+		"LSHttpO_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "@{linkedService().baseurl}"
+		},
+		"LSdestinationGen2O_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sa2foradf.dfs.core.windows.net/"
+		},
+		"LSforKeyVaultQ_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://keyvaultnamez1.vault.azure.net/"
+		},
+		"LSfordestination_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://sa2foradf.dfs.core.windows.net/"
+		},
+		"LSsinksqlA_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "lapop-20vsltd9.database.windows.net"
+		},
+		"LSsinksqlA_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "kiran"
+		},
+		"LSsinksqlA_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "KIRAN"
+		},
+		"LSsqldestinationQQ_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "lapop-20vsltd9.database.windows.net"
+		},
+		"LSsqldestinationQQ_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "kiran"
+		},
+		"LSsqldestinationQQ_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "KIRAN"
+		},
+		"LsforSQLandkeyvaultQ_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "lapop-20vsltd9.database.windows.net"
+		},
+		"LsforSQLandkeyvaultQ_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "kiran"
+		},
+		"LsforSQLandkeyvaultQ_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "KIRAN"
+		},
+		"trigger1_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/234d78ea-1a5d-43ea-ab90-49351b91be5f/resourceGroups/MyRG/providers/Microsoft.Storage/storageAccounts/sa1foradf"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "ityadf_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureBlobStorage1sca1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1sca1_connectionString')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"AzureDataLakeStorage2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
+					},
+					"AzureDataLakeStorage3_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage3_accountKey')]"
+					},
+					"AzureDataLakeStoragegit_accountKey": {
+						"value": "[parameters('AzureDataLakeStoragegit_accountKey')]"
+					},
+					"AzureSqlDatabase1_password": {
+						"value": "[parameters('AzureSqlDatabase1_password')]"
+					},
+					"LSblobissourceA_connectionString": {
+						"value": "[parameters('LSblobissourceA_connectionString')]"
+					},
+					"LSblobsourceSAQQ_connectionString": {
+						"value": "[parameters('LSblobsourceSAQQ_connectionString')]"
+					},
+					"LSdestinationGen2O_accountKey": {
+						"value": "[parameters('LSdestinationGen2O_accountKey')]"
+					},
+					"LSforBlobSA1_connectionString": {
+						"value": "[parameters('LSforBlobSA1_connectionString')]"
+					},
+					"LSfordestination_accountKey": {
+						"value": "[parameters('LSfordestination_accountKey')]"
+					},
+					"LSforsource_connectionString": {
+						"value": "[parameters('LSforsource_connectionString')]"
+					},
+					"LSsinksqlA_password": {
+						"value": "[parameters('LSsinksqlA_password')]"
+					},
+					"LSsourceBlobO_connectionString": {
+						"value": "[parameters('LSsourceBlobO_connectionString')]"
+					},
+					"LSsourcetosql_connectionString": {
+						"value": "[parameters('LSsourcetosql_connectionString')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage3_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage3_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStoragegit_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStoragegit_properties_typeProperties_url')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
+					},
+					"HttpServer1_properties_typeProperties_url": {
+						"value": "[parameters('HttpServer1_properties_typeProperties_url')]"
+					},
+					"LSHttpO_properties_typeProperties_url": {
+						"value": "[parameters('LSHttpO_properties_typeProperties_url')]"
+					},
+					"LSdestinationGen2O_properties_typeProperties_url": {
+						"value": "[parameters('LSdestinationGen2O_properties_typeProperties_url')]"
+					},
+					"LSforKeyVaultQ_properties_typeProperties_baseUrl": {
+						"value": "[parameters('LSforKeyVaultQ_properties_typeProperties_baseUrl')]"
+					},
+					"LSfordestination_properties_typeProperties_url": {
+						"value": "[parameters('LSfordestination_properties_typeProperties_url')]"
+					},
+					"LSsinksqlA_properties_typeProperties_server": {
+						"value": "[parameters('LSsinksqlA_properties_typeProperties_server')]"
+					},
+					"LSsinksqlA_properties_typeProperties_database": {
+						"value": "[parameters('LSsinksqlA_properties_typeProperties_database')]"
+					},
+					"LSsinksqlA_properties_typeProperties_userName": {
+						"value": "[parameters('LSsinksqlA_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "ityadf_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LSsqldestinationQQ_password": {
+						"value": "[parameters('LSsqldestinationQQ_password')]"
+					},
+					"LSsqldestinationQQ_properties_typeProperties_server": {
+						"value": "[parameters('LSsqldestinationQQ_properties_typeProperties_server')]"
+					},
+					"LSsqldestinationQQ_properties_typeProperties_database": {
+						"value": "[parameters('LSsqldestinationQQ_properties_typeProperties_database')]"
+					},
+					"LSsqldestinationQQ_properties_typeProperties_userName": {
+						"value": "[parameters('LSsqldestinationQQ_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ityadf_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "ityadf_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"LsforSQLandkeyvaultQ_properties_typeProperties_server": {
+						"value": "[parameters('LsforSQLandkeyvaultQ_properties_typeProperties_server')]"
+					},
+					"LsforSQLandkeyvaultQ_properties_typeProperties_database": {
+						"value": "[parameters('LsforSQLandkeyvaultQ_properties_typeProperties_database')]"
+					},
+					"LsforSQLandkeyvaultQ_properties_typeProperties_userName": {
+						"value": "[parameters('LsforSQLandkeyvaultQ_properties_typeProperties_userName')]"
+					},
+					"trigger1_properties_typeProperties_scope": {
+						"value": "[parameters('trigger1_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'ityadf_ArmTemplate_1')]"
+			]
+		}
+	]
+}
