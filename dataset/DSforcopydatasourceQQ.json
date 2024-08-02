@@ -1,0 +1,32 @@
+{
+	"name": "DSforcopydatasourceQQ",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LSblobsourceSAQQ",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"sourcefilews": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().sourcefilews",
+					"type": "Expression"
+				},
+				"container": "sourcefolderforadf"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

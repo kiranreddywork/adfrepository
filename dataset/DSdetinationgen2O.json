@@ -1,0 +1,33 @@
+{
+	"name": "DSdetinationgen2O",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LSdestinationGen2O",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FileNAME": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": {
+					"value": "@dataset().FileNAME",
+					"type": "Expression"
+				},
+				"folderPath": "outputforgen2",
+				"fileSystem": "destinationfolderforadf"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

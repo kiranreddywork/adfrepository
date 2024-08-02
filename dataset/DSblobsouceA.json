@@ -1,0 +1,24 @@
+{
+	"name": "DSblobsouceA",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LSblobissourceA",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "sales9.csv",
+				"container": "sourcefolderforadf"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,32 @@
+{
+	"name": "DScascadesSourcesql",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LSsourcetosql",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"source1tosql": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "@dataset().source1tosql",
+					"type": "Expression"
+				},
+				"container": "sourcefolderforadf"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

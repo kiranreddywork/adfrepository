@@ -1,0 +1,25 @@
+{
+	"name": "DSforSQLdestinationQQ",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LSsqldestinationQQ",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"tbname": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": {
+				"value": "@dataset().tbname",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

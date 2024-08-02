@@ -1,0 +1,9 @@
+{
+	"name": "ityadf",
+	"location": "centralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0b40b4d6-d994-4d2e-9a72-df31f5911c8c",
+		"tenantId": "1262705b-492f-4ffa-8a8e-15069b6c8b18"
+	}
+}

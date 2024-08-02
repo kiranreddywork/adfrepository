@@ -1,0 +1,24 @@
+{
+	"name": "LsforSQLandkeyvaultQ",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"server": "lapop-20vsltd9.database.windows.net",
+			"database": "kiran",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "KIRAN",
+			"password": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "LSforKeyVaultQ",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "secretnamez1"
+			}
+		}
+	}
+}
